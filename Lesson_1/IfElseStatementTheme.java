@@ -140,5 +140,6 @@ public class IfElseStatementTheme {
             float totalsum3 = profit3 + depositSum;
             System.out.println("\n начисленный процент - " + profit3 + ". Итоговая сумма - " + totalsum3);
         }
+        System.out.println("\n Задача №7. Определение оценки по предметам");
    }
 }
