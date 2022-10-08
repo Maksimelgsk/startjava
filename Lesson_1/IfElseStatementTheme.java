@@ -1,5 +1,5 @@
 public class IfElseStatementTheme {
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println ("\n Задача №1. Перевод псевдокода на язык Java");
         int personAge = 21;
         if (personAge > 20) {
@@ -140,6 +140,162 @@ public class IfElseStatementTheme {
             float totalsum3 = profit3 + depositSum;
             System.out.println("\n начисленный процент - " + profit3 + ". Итоговая сумма - " + totalsum3);
         }
+
         System.out.println("\n Задача №7. Определение оценки по предметам");
-   }
+         // итоговый балл по истории
+         int valueHistory = 59;
+         // итоговый балл по программированию
+         int valueProg = 91;
+         // средний % по предметам
+         float mediumValuePercent = (valueHistory + valueProg) / 2F;
+         if ((valueHistory <= 0) || (valueHistory > 100) || (valueProg <= 0) || (valueProg > 100)) {
+            System.out.println("\n Неверно введены данные!!! Повторите попытку");
+        }
+         else if ((valueHistory <= 60) && (valueProg <=60)) {
+            int mark1 = 2;
+            int mark2 = 2;
+            float mediumMark1 = (mark1 + mark2) / 2F;
+            System.out.println("\n Оценка - " + mark1 + " история");
+            System.out.println("\n Оценка - " + mark2 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark1);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+         else if ((valueHistory > 60) && (valueHistory <= 73) && (valueProg > 60) && (valueProg <=73)) {
+            int mark3 = 3;
+            int mark4 = 3;
+            float mediumMark2 = (mark3 + mark4) / 2F;
+            System.out.println("\n Оценка - " + mark3 + " история");
+            System.out.println("\n Оценка - " + mark4 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark2);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+          else if ((valueHistory > 73) && (valueHistory <= 91) && (valueProg > 73) && (valueProg <=91)) {
+            int mark5 = 4;
+            int mark6 = 4;
+            float mediumMark3 = (mark5 + mark6) / 2F;
+            System.out.println("\n Оценка - " + mark5 + " история");
+            System.out.println("\n Оценка - " + mark6 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark3);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+         else if ((valueHistory > 91) && (valueProg > 91)) {
+            int mark7 = 5;
+            int mark8 = 5;
+            float mediumMark4 = (mark7 + mark8) / 2F;
+            System.out.println("\n Оценка - " + mark7 + " история");
+            System.out.println("\n Оценка - " + mark8 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark4);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+         else if ((valueHistory <= 60) && (valueProg > 60) && (valueProg <=73)) {
+            int mark9 = 2;
+            int mark10 = 3;
+            float mediumMark5 = (mark9 + mark10) / 2F;
+            System.out.println("\n Оценка - " + mark9 + " история");
+            System.out.println("\n Оценка - " + mark10 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark5);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+         else if ((valueHistory <= 60) && (valueProg > 73) && (valueProg <=91)) {
+            int mark11 = 2;
+            int mark12 = 4;
+            float mediumMark6 = (mark11 + mark12) / 2F;
+            System.out.println("\n Оценка - " + mark11 + " история");
+            System.out.println("\n Оценка - " + mark12 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark6);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+         }
+         else if ((valueHistory <= 60) && (valueProg > 91)) {
+            int mark13 = 2;
+            int mark14 = 5;
+            float mediumMark7 = (mark13 + mark14) / 2F;
+            System.out.println("\n Оценка - " + mark13 + " история");
+            System.out.println("\n Оценка - " + mark14 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark7);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 60) && (valueHistory <= 73) && (valueProg <= 60)) {
+            int mark15 = 3;
+            int mark16 = 2;
+            float mediumMark8 = (mark15 + mark16) / 2F;
+            System.out.println("\n Оценка - " + mark15 + " история");
+            System.out.println("\n Оценка - " + mark16 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark8);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 73) && (valueHistory <= 91) && (valueProg <= 60)) {
+            int mark17 = 4;
+            int mark18 = 2;
+            float mediumMark9 = (mark17 + mark18) / 2F;
+            System.out.println("\n Оценка - " + mark17 + " история");
+            System.out.println("\n Оценка - " + mark18 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark9);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 91) && (valueProg <= 60)) {
+            int mark19 = 5;
+            int mark20 = 2;
+            float mediumMark10 = (mark19 + mark20) / 2F;
+            System.out.println("\n Оценка - " + mark19 + " история");
+            System.out.println("\n Оценка - " + mark20 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark10);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 60) && (valueHistory <= 73) && (valueProg >  73) && (valueProg <= 91)) {
+            int mark21 = 3;
+            int mark22 = 4;
+            float mediumMark11 = (mark21 + mark22) / 2F;
+            System.out.println("\n Оценка - " + mark21 + " история");
+            System.out.println("\n Оценка - " + mark22 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark11);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 60) && (valueHistory <= 73) && (valueProg >  91)) {
+            int mark23 = 3;
+            int mark24 = 5;
+            float mediumMark12 = (mark23 + mark24) / 2F;
+            System.out.println("\n Оценка - " + mark23 + " история");
+            System.out.println("\n Оценка - " + mark24 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark12);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 73) && (valueHistory <= 91) && (valueProg > 60) && (valueProg <=73)) {
+            int mark25 = 4;
+            int mark26 = 3;
+            float mediumMark13 = (mark25 + mark26) / 2F;
+            System.out.println("\n Оценка - " + mark25 + " история");
+            System.out.println("\n Оценка - " + mark26 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark13);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 73) && (valueHistory <= 91) && (valueProg >  91)) {
+            int mark27 = 4;
+            int mark28 = 5;
+            float mediumMark14 = (mark27 + mark28) / 2F;
+            System.out.println("\n Оценка - " + mark27 + " история");
+            System.out.println("\n Оценка - " + mark28 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark14);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 91) && (valueProg >60) && (valueProg <= 73)) {
+            int mark29 = 5;
+            int mark30 = 3;
+            float mediumMark15 = (mark29 + mark30) / 2F;
+            System.out.println("\n Оценка - " + mark29 + " история");
+            System.out.println("\n Оценка - " + mark30 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark15);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else if ((valueHistory > 91) && (valueProg >73) && (valueProg <= 91)) {
+            int mark31 = 5;
+            int mark32 = 4;
+            float mediumMark16 = (mark31 + mark32) / 2F;
+            System.out.println("\n Оценка - " + mark31 + " история");
+            System.out.println("\n Оценка - " + mark32 + " программирование");
+            System.out.println("\n Средний балл оценок по предметам - " + mediumMark16);
+            System.out.println("\n Средний % по предметам - " + mediumValuePercent);
+        }
+        else {
+        }
+    }
 }
