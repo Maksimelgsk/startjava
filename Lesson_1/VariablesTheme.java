@@ -25,16 +25,17 @@ public class VariablesTheme {
         System.out.println(" Объем жесткого диска D = " + sizeHdd1 + " байт");
         System.out.println(" Объем жесткого диска C = " + sizeHdd2 + " Гб");
         System.out.println(" Объем сетевого жесткого диска E = " + sizeHdd3);
-        System.out.println(" Измерение объема диска 'E'-" + unitOfcharge1 + unitOfcharge2);
-        System.out.println(" У тебя ноутбук?-" + comp);
-        System.out.println(" У тебя компьютер?-" + lapTop);
+        System.out.println(" Измерение объема диска 'E'- " + unitOfcharge1 + unitOfcharge2);
+        System.out.println(" У тебя ноутбук? - " + comp);
+        System.out.println(" У тебя компьютер? - " + lapTop);
 
         System.out.println("\n Задача №2. Расчет стоимости товара со скидкой");
         int pricePen = 100;
         int priceBook = 200;
         float discount = 0.11F;
-        float discountPrice = pricePen + priceBook - discount * (pricePen + priceBook);
-        System.out.println("\n Сумма скидки = " + (discount * pricePen + discount * priceBook));
+        float discountSum = (pricePen + priceBook) * discount;
+        float discountPrice = pricePen + priceBook - discountSum;
+        System.out.println("\n Сумма скидки = " + discountSum);
         System.out.println(" Общая стоимость товара со скидкой = " + discountPrice);
 
         System.out.println("\n Задача №3. Вывод на консоль слова JAVA");
@@ -51,26 +52,22 @@ public class VariablesTheme {
         System.out.println("" + " " + bigJ + bigJ + " " + " " + smallA + " " + " " + " " + " " + " " + smallA + " " + " " + 
                 bigV + " " + " " + smallA + " " + " " + " " + " " + " " + smallA);
 
-        System.out.println("\n Задача №4.Отображение min и max значений числовых типов данных");
-        int byteMax = 127;
+        System.out.println("\n Задача №4.Отображение min и max значений числовых типов данных. Решение №1");
+        byte byteMax = 127;
         System.out.println("\n Первоначальное значение byte = " + byteMax);
         System.out.println(" Значение после инкремента = " + ++byteMax);
-        byteMax = 127;
         System.out.println(" Значение после декремента = " + --byteMax);
-        int shortMax = 32767;
+        short shortMax = 32767;
         System.out.println("\n Первоначальное значение short = " + shortMax);
         System.out.println(" Значение после инкремента = " + ++shortMax);
-        shortMax = 32767;
         System.out.println(" Значение после декремента = " + --shortMax);
-        long intMax = 2147483647L;
+        int intMax = 2147483647;
         System.out.println("\n Первоначальное значение int = " + intMax);
         System.out.println(" Значение после инкремента = " + ++intMax);
-        intMax = 2147483647L;
         System.out.println(" Значение после декремента = " + --intMax);
-        float longMax = 9223372036854775807L;
+        long longMax = 9223372036854775807L;
         System.out.println("\n Первоначальное значение long = " + longMax);
         System.out.println(" Значение после инкремента = " + ++longMax);
-        longMax = 9223372036854775807L;
         System.out.println(" Значение после декремента = " + --longMax);
 
         System.out.println("\n Задача №5. Перестановка значений переменных");
@@ -89,11 +86,11 @@ public class VariablesTheme {
         System.out.println(" Новые значения переменных" + " a = " + a + " b = " + b);
         System.out.println("\n Перестановка значений с помощью побитовой операции ^");
         // a=5^2=0101^0010=0111=7
-        a = a^b;
+        a ^= b;
         // b=7^2=0111^0010=0101=5
-        b = a^b;
+        b ^= a;
         // a=5^7=0101^0111=0010=2
-        a = b^a;
+        a ^= b;
         System.out.println(" Новые значения переменных" + " a = " + a + " b = " + b);
 
         System.out.println("\n Задача №6. Вывод символов и их кодов");
