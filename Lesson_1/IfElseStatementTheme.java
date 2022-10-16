@@ -105,8 +105,6 @@ public class IfElseStatementTheme {
         int depositSum = 300_000;
         // начисленный процент
         float profit;
-        // итоговая сумма с процентом
-        float totalSum;
         System.out.println("Сумма вклад - " + depositSum + " руб.");
         if(depositSum <= 100_000) {
             profit = 0.05F * depositSum;
@@ -123,12 +121,13 @@ public class IfElseStatementTheme {
         // итоговый балл по программированию
         int percentProg = 65;
         // оценка по истории
-        int markHistory = 0;
+        int markHistory = 2;
         // оценка по программированию
-        int markProg = 0;
+        int markProg = 2;
         if ((percentHistory <= 0) || (percentHistory > 100) || (percentProg <= 0) || (percentProg > 100)) {
             System.out.println("Неверно введены данные!!! Повторите попытку");
-        } if (percentHistory <= 60) {
+        }
+        if (percentHistory <= 60) {
             markHistory = 2;
         } else if ((percentHistory > 60) && (percentHistory <= 73)) {
             markHistory = 3;
@@ -136,7 +135,8 @@ public class IfElseStatementTheme {
             markHistory = 4;
         } else if (percentHistory > 91) {
             markHistory = 5;
-        } if (percentProg <= 60) {
+        }
+        if (percentProg <= 60) {
             markProg = 2;
         } else if ((percentProg > 60) && (percentProg <= 73)) {
             markProg = 3;
