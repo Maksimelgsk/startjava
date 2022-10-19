@@ -1,5 +1,5 @@
 public class CyclesTheme {
-    public static void main (String [] args) {
+    public static void main(String[] args) {
         System.out.println ("\nЗадача №1. Подсчет суммы четных и нечетных чисел\n");
         int sumEven = 0;
         int sumOdd = 0;
@@ -16,11 +16,11 @@ public class CyclesTheme {
                 " , а нечетных " + sumOdd);
 
         System.out.println("\nЗадача №2. Вывод чисел в интервале (min и max) в порядке убывания\n");
-        int num1 = 5;
-        int num2 = -1;
+        int num1 = -1;
+        int num2 = 5;
         int num3 = 10;
-        int min = 0;
-        int max = 0;
+        int min = -1;
+        int max = 10;
         if (num1 < num2 && num1 < num3) {
             min = num1;
         } else if (num2 < num3) {
@@ -43,124 +43,122 @@ public class CyclesTheme {
         int number = 1234;
         int sumDigits = 0;
         while(number > 0) {
-            int digit = 0;
-            digit = number % 10;
+            int digit = number % 10;;
             sumDigits += digit;
-            System.out.print(digit + " ");
+            System.out.print(digit);
             number /= 10;
         }
         System.out.println("\nСумма цифр: " + sumDigits);
 
         System.out.println("\nЗадача №4. Вывод чисел на консоль в несколько строк\n");
-        for (int i = 1; i < 24; i+= 2) {
+        for (int i = 1; i < 24; i+=2) {
             for (int j = 0; j < 5; j++) {
                 if (i < 24) {
                     System.out.printf("%3d", i);
                 } else {
                     System.out.printf("%3d", 0);
                 }
-            i += 2;
+                i+=2;
             }
-        i -= 2;
+            i-=2;
         System.out.println();
         }
 
         System.out.println ("\nЗадача №5. Проверка количества единиц на четность\n");
-        int numX = 314191;
-        int x = numX;
-        int sum = 0;
-        while (x > 0) {
-            int ones = 0;
-            ones = x % 10;
-            if (ones != 1) {
-                ones = 0;
+        number = 314191;
+        int copyNumber = number;
+        int countOnes = 0;
+        while (copyNumber > 0) {
+            int digit = copyNumber % 10;
+            if (digit != 1) {
+                digit = 0;
             }
-            sum += ones;
-            x /= 10;
+            countOnes+= digit;
+            copyNumber /= 10;
         }
-        if (sum % 2 == 0) {
-            System.out.println("Число " + numX + " содержит " + sum + " (четное) количество единиц");
+        if (countOnes % 2 == 0) {
+            System.out.println("Число " + number + " содержит " + countOnes + 
+                    " (четное) количество единиц");
         } else {
-            System.out.println("Число " + numX + " содержит " + sum + " (нечетное) количество единиц");
+            System.out.println("Число " + number + " содержит " + countOnes + 
+                   " (нечетное) количество единиц");
         }
 
         System.out.println ("\nЗадача №6. Отображение фигур в консоли\n");
         for(int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
-               System.out.print("*");
+                System.out.print("*");
             }
-        System.out.println();
+            System.out.println();
         }
 
         System.out.println();
-        int i = 0;
-        int j = 0;
-        while (i < 5) {
-            j = i;
-            while (j < 5) {
-                j++;
-                System.out.print("#");
+        int gridAlong = 0;
+        int gridAcross = 0;
+        while (gridAlong < 5) {
+            gridAcross = gridAlong;
+            while (gridAcross < 5) {
+                gridAcross++;
+            System.out.print("#");
             }
-            i++;
-        System.out.println();
+            gridAlong++;
+            System.out.println();
         }
 
         System.out.println();
-        j = 1;
-        i = 5;
+        int dollarSignAcross = 1;
+        int dollarSignAlong = 5;
         do {
-            if(i < 3) {
-                j = i;
+            if(dollarSignAlong < 3) {
+                dollarSignAcross = dollarSignAlong;
             } else {
-                j = 6 - i;
+                dollarSignAcross = 6 - dollarSignAlong;
             }
             do {
-                System.out.print("$");
-            } while(--j > 0);
-        System.out.println();
-        i--;
-        } while(i > 0);
+            System.out.print("$");
+            } while(--dollarSignAcross > 0);
+            System.out.println();
+            dollarSignAlong--;
+        } while(dollarSignAlong > 0);
 
         System.out.println ("\nЗадача №7. Отображение ASCII-символов\n");
         System.out.println("  Dec  Char");
-        for (i = 0; i <= 127; i++) {
-            if (i > 0 && i <= 47 && i % 2 == 1) {
+        for (int i = 0; i <= 127; i++) {
+            if ((i > 0) && (i <= 47) && (i % 2 == 1)) {
                 System.out.printf("%4d%5c%n", i, i);
-            } else if (i > 97 && i <= 122 && i % 2 == 0) {
+            } else if ((i > 97) && (i <= 122) && (i % 2 == 0)) {
                 System.out.printf("%4d%5c%n", i, i);
             }
         }
 
         System.out.println ("\nЗадача №8. Проверка, является ли число палиндромом\n");
-        int num = 1234321;
-        int printNum = num;
+        number = 1234321;
+        int copyNum = number;
         int rev = 0;
-        while (num != 0) {
-            rev = rev * 10 + num % 10;
-            num = num / 10;
+        while (number != 0) {
+            rev = rev * 10 + number % 10;
+            number /= 10;
         }
-        if (rev == printNum) {
-            System.out.print("Число " + printNum + " является палиндромом");
+        if (rev == copyNum) {
+            System.out.print("Число " + copyNum + " является палиндромом");
         } else {
-            System.out.print("Число " + printNum + " не является палиндромом");
+            System.out.print("Число " + copyNum + " не является палиндромом");
         }
 
         System.out.println ("\n\nЗадача №9. Определение, является ли число счастливым\n");
         number = 501213;
-        int left = number % 1000;
-        int right = (number / 1000) % 1000;
+        int right = number % 1000;
+        int left = number / 1000;
         int sumL = 0;
         int sumR = 0;
-        while (left != 0) {
+        while (left != 0 && right != 0) {
             sumL += left % 10;
+            sumR += right % 10;
             left /= 10;
+            right /= 10;
         }
         System.out.println("Сумма цифр " + (number / 100) % 10 + (number / 10) % 10 + 
                  number % 10 + " = " + sumL);
-        while (right != 0) {
-            sumR += right % 10;
-            right /= 10;
-        }
         System.out.println("Сумма цифр " + (number / 100000) % 10 + (number / 10000) % 10 + 
                 (number / 1000) % 10 + " = " + sumR);
         if (sumL == sumR) {
@@ -172,8 +170,8 @@ public class CyclesTheme {
         System.out.println ("\nЗадача №10. Вывод таблицы умножения Пифагора\n");
         System.out.print("   |  2  3  4  5  6  7  8  9\n");
         System.out.println("---|-------------------------");
-        for (i = 2; i < 10; i++) {
-            for (j = 1; j < 10; j++) {
+        for (int i = 2; i < 10; i++) {
+            for (int j = 1; j < 10; j++) {
                 System.out.printf("%3d",i * j);
                 if (j == 1 ) {
                     System.out.print("|");
