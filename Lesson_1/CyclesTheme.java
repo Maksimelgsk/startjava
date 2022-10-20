@@ -51,17 +51,17 @@ public class CyclesTheme {
         System.out.println("\nСумма цифр: " + sumDigits);
 
         System.out.println("\nЗадача №4. Вывод чисел на консоль в несколько строк\n");
-        for (int i = 1; i < 24; i+=2) {
-            for (int j = 0; j < 5; j++) {
-                if (i < 24) {
-                    System.out.printf("%3d", i);
-                } else {
-                    System.out.printf("%3d", 0);
-                }
-                i+=2;
+        int newLine = 0;
+        for (int i = 1; i < 30; i += 2) {
+            newLine++;
+            if (i < 24) {
+                System.out.printf("%4d", i);
+            } else if (i >= 24) {
+                System.out.printf("%4d", 0);
             }
-            i-=2;
-        System.out.println();
+            if (newLine == 5 || newLine == 10) {
+                System.out.println();
+            }
         }
 
         System.out.println ("\nЗадача №5. Проверка количества единиц на четность\n");
