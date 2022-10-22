@@ -19,21 +19,20 @@ public class CyclesTheme {
         int a = 10;
         int b = 5;
         int c = -1;
-        int min = -1;
-        int max = 10;
-        if (a < min) {
-            min = a;
-        } else if (c > max) {
-            max = c;
-        } else if (b < min) {
-            min = b;
-        } else if (c < min) {
-            min = c;
-        } else if (a > max) {
+        int min = b;
+        int max = a;
+        if (a > max) {
             max = a;
-        } else if (b > max) {
-            max = b;
-        } 
+        }
+        if (c > max) {
+            max = c;
+        }
+        if (b < min) {
+            min = b;
+        }
+        if (c < min) {
+            c = min;
+        }
         for (int i = --max; i > min; i--) {
            System.out.print(i + " ");
         }
@@ -91,33 +90,33 @@ public class CyclesTheme {
         }
 
         System.out.println();
-        int qtyStringNum = 0;
-        int stringNum = 0;
-        while (qtyStringNum < 5) {
-            stringNum = qtyStringNum;
-            while (stringNum < 5) {
-                stringNum++;
+        int numSymbolsPerLine = 0;
+        int numLines = 0;
+        while (numSymbolsPerLine < 5) {
+            numLines = numSymbolsPerLine;
+            while (numLines < 5) {
+                numLines++;
                 System.out.print("#");
             }
-            qtyStringNum++;
+            numSymbolsPerLine++;
             System.out.println();
         }
 
         System.out.println();
-        stringNum = 1;
-        qtyStringNum = 5;
+        numLines = 1;
+        numSymbolsPerLine = 5;
         do {
-            if(qtyStringNum < 3) {
-                stringNum = qtyStringNum;
+            if(numSymbolsPerLine < 3) {
+                numLines = numSymbolsPerLine;
             } else {
-                stringNum = 6 - qtyStringNum;
+                numLines = 6 - numSymbolsPerLine;
             }
             do {
                 System.out.print("$");
-            } while(--stringNum > 0);
+            } while(--numLines > 0);
             System.out.println();
-            qtyStringNum--;
-        } while(qtyStringNum > 0);
+            numSymbolsPerLine--;
+        } while(numSymbolsPerLine > 0);
 
         System.out.println ("\nЗадача №7. Отображение ASCII-символов\n");
         System.out.println("  Dec  Char");
