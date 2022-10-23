@@ -1,20 +1,20 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int range = 10;
-        int yourNum = 4;
-        int compNum = (int)(Math.random() * range);
-        while (true) {
-            System.out.println("Угадайте число от 0 до " + range);
-            if (yourNum == compNum) {
-                System.out.println("Вы победили! " + "\nКомпьютер загадал число = " + compNum);
+        int range = 100;
+        int playerNum = 67;
+        int compNum = (int) (Math.random() * range);
+        System.out.println("Угадайте число от 0 до " + range);
+        while (playerNum != compNum) {
+            if (playerNum == compNum) {
                 break;
-            } else if (yourNum > compNum) {
-                System.out.println("Число " + yourNum + " больше того, что загадал компьютер " + "\nКомпьютер загадал число = " + compNum);
-                break;
+            } else if (playerNum > compNum) {
+                System.out.println("\nЧисло " + playerNum + " больше того, что загадал компьютер ");
+                playerNum--;
             } else {
-                System.out.println("Число " + yourNum + " меньше того, что загадал компьютер " + "\nКомпьютер загадал число = " + compNum);
-                break;
+                System.out.println("\nЧисло " + playerNum + " меньше того, что загадал компьютер ");
+                playerNum++;
             }
         }
+        System.out.println("\nВы победили! " + " Компьютер загадал число " + compNum);
     }
 }
