@@ -1,13 +1,11 @@
 public class MyFirstGame {
     public static void main(String[] args) {
         int range = 100;
-        int playerNum = 67;
+        int playerNum = 1;
         int compNum = (int) (Math.random() * range);
         System.out.println("Угадайте число от 0 до " + range);
         while (playerNum != compNum) {
-            if (playerNum == compNum) {
-                break;
-            } else if (playerNum > compNum) {
+            if (playerNum > compNum) {
                 System.out.println("\nЧисло " + playerNum + " больше того, что загадал компьютер ");
                 playerNum--;
             } else {
