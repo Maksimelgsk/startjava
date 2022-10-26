@@ -7,16 +7,20 @@ public class Person {
     void walk() {
        System.out.println("Пройдено в день больше обычного");
     }
+
     boolean sit() {
        System.out.println("Вы сидите в кресле");
        return true;
     }
+
     void run() {
         System.out.println("Ваша максимальная скорость сегодня 20 км/ч");
     }
+
     void speak() {
        System.out.println("Привет!");
     }
+
     String learnJava() {
        return "Можете переходить на курс BaseJava";
     }

@@ -1,11 +1,6 @@
 public class WolfTest {
     public static void main(String[] args) {
         Wolf wolfOne = new Wolf();
-        //wolfOne.gender = "волчица";
-        //wolfOne.name = "Ракша";
-        //wolfOne.weight = 30;
-        //wolfOne.age = 8;
-        //wolfOne.color = "серый";
         wolfOne.setGender("Волк");
         System.out.println("Пол: " + wolfOne.getGender());
         wolfOne.setName("Акела");
