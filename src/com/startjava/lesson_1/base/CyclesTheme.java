@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.base;
+
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("\nЗадача №1. Подсчет суммы четных и нечетных чисел\n");
@@ -17,8 +19,8 @@ public class CyclesTheme {
 
         System.out.println("\nЗадача №2. Вывод чисел в интервале (min и max) в порядке убывания\n");
         int a = 10;
-        int b = 5;
-        int c = -1;
+        int b = -1;
+        int c = 5;
         int min = b;
         int max = a;
         if (a > max) {
