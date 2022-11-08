@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         Calculator calc = new Calculator();
         String reply = "yes";
-        while("yes".equals(reply)) {
+        while ("yes".equals(reply)) {
             System.out.print("Введите первое число: ");
             calc.setNum1(scan.nextInt());
             System.out.print("Введите знак математической операции: ");

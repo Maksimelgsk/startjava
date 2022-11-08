@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
     private int num1, num2, result;
@@ -13,7 +13,7 @@ public class Calculator {
     }
 
     public void setSign(char sign) {
-            this.sign = sign;
+        this.sign = sign;
     }
 
     public void calculate() {
@@ -46,6 +46,7 @@ public class Calculator {
                 break;
             default:
                 System.out.println("Вы допустили ошибку при вводе знака");
-        } System.out.print("Результат: " + result);
+        }
+        System.out.print("Результат: " + result);
     }
 }
