@@ -50,7 +50,7 @@ public class ArrayTheme {
         outFloatArrayMod(floatArr);
         System.out.println("\n\n  Кол-во обнуленных ячеек: " + sum);
 
-        System.out.println("\n\n4. Вывод элементов массива лесенкой в обратном порядке");
+        System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
         len = 26;
         char[] charArr = new char[len];
         int k = 0;
