@@ -3,63 +3,66 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Arrays;
 
 public class ArrayTheme {
+
     public static void main(String[] args) {
         System.out.println("1. Реверс значений массива");
-        int[] intArr = {1, 3, 2, 4, 2, 7, 5};
+        int[] intArr = {1, 2, 3, 4, 5, 6, 7};
         int len = intArr.length;
         outIntArray(intArr);
         System.out.println();
         for (int i = 0; i < len / 2; i++) {
             int var = intArr[i];
-            intArr[i] = intArr[len - i - 1];
-            intArr[len - i - 1] = var;
+            len--;
+            intArr[i] = intArr[len - i];
+            intArr[len - i] = var;
         }
         outIntArray(intArr);
 
         System.out.println("\n\n2. Вывод произведения элементов массива");
-        len = 10;
-        intArr = new int[len];
-        int multi = 1;
-        for (int i = 1; i < intArr.length - 1; i++) {
+        intArr = new int[10];
+        len = intArr.length;
+        int result = 1;
+        for (int i = 0; i < len; i++) {
             intArr[i] = i;
-            multi *= intArr[i];
         }
-        System.out.print("1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 = " + multi);
-        String result = (multi == 40320) ? "(The solve : True)" : "(The solve : False)";
-        System.out.print(" " + result);
+        System.out.println();
+        for (int i = 1; i < len - 1; i++) {
+            result *= intArr[i];
+            System.out.print(intArr[i]);
+            System.out.printf("%3s", (i < 8) ? " * " : " = ");
+        }
+        System.out.println(result);
+        System.out.println(intArr[0] + " " + intArr[9]);
 
-        System.out.println("\n\n3. Удаление элементов массива");
-        len = 15;
-        float[] floatArr = new float[len];
+        System.out.println("\n3. Удаление элементов массива");
+        float[] floatArr = new float[15];
+        len = floatArr.length;
         for (int i = 0; i < len; i++) {
             floatArr[i] = (float) Math.random();
         }
         outFloatArrayMod(floatArr);
         System.out.println("\n");
-        int sum = 0;
+        int sumNull = 0;
+        float middleNum = floatArr[len / 2];
         for (int i = 0; i < len; i++) {
-            float midFlotArr = floatArr[len / 2];
-            if (floatArr[i] > midFlotArr) {
+            if (floatArr[i] > middleNum) {
                 floatArr[i] = 0;
+                sumNull++;
             }
-            int b;
-            if (floatArr[i] == 0) b = 1;
-            else b = 0;
-            sum += b;
         }
         outFloatArrayMod(floatArr);
-        System.out.println("\n\n  Кол-во обнуленных ячеек: " + sum);
+        System.out.println("\n\n  Кол-во обнуленных ячеек: " + sumNull);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        len = 26;
-        char[] charArr = new char[len];
+        char[] letterArr = new char[26];
+        len = letterArr.length;
         int k = 0;
         for (char ch = 'A'; ch <= 'Z'; ch++) {
-            charArr[k++] = ch;
+            letterArr[k++] = ch;
         }
         for (int i = len - 1; i >= 0; i--) {
             for (int j = len - 1; j >= i; j--) {
-                System.out.print(charArr[j] + " ");
+                System.out.print(letterArr[j] + " ");
             }
             System.out.println();
         }
@@ -83,29 +86,24 @@ public class ArrayTheme {
         }
 
         System.out.println("\n\n6. Сдвиг элементов массива");
-        String[] stringArr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        System.out.println("Исходный массив : ");
-        for (String s : stringArr) {
-            System.out.print(s);
-        }
-        int length = 0;
-        for (String s : stringArr) {
-            if (s.isBlank()) {
-                length++;
+        String[] srcArr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        len = srcArr.length;
+        System.out.println("Source array : " + Arrays.toString(srcArr));
+        int noEmptyString = 0;
+        for (int i = 0; i < len; i++) {
+            if (!srcArr[i].isBlank()) {
+                noEmptyString++;
             }
         }
-        int totalFillSting = stringArr.length - length;
-        System.out.println();
-        String[] arrCopy1 = new String[1];
-        System.arraycopy(stringArr, 1, arrCopy1, 0, 1);
-        String[] arrCopy2 = new String[3];
-        System.arraycopy(stringArr, 3, arrCopy2, 0, 3);
-        String[] arrCopy3 = new String[3];
-        System.arraycopy(stringArr, 7, arrCopy3, 0, 3);
-        System.out.println("Клонированный массив : ");
-        for (String arrCopy: combineArrays(arrCopy1, arrCopy2, arrCopy3, totalFillSting)) {
-            System.out.print(arrCopy);
+        String[] destArr = new String[noEmptyString];
+        int n = 0;
+        int length = 1;
+        for (int i = 0; i < len; i++) {
+                if (!srcArr[i].isBlank()) {
+                    System.arraycopy(srcArr, i, destArr, n++, length);
+                }
         }
+        System.out.println("Destination arrays : " + Arrays.toString(destArr));
 
     }
 
@@ -121,7 +119,6 @@ public class ArrayTheme {
     public static void outIntArray(int[] intArr) {
         for (int num : intArr) {
             System.out.print(num + " ");
-
         }
     }
 
@@ -130,28 +127,6 @@ public class ArrayTheme {
             if (i % 8 == 0) System.out.println();
             System.out.printf("%7.3f", floatArr[i]);
         }
-    }
-
-    public static String[] combineArrays(String[] arrCopy1, String[] arrCopy2, String[] arrCopy3, int totalString1) {
-        int totalString2 = arrCopy1.length + arrCopy2.length + arrCopy3.length;
-        String[] totalArray = new String[totalString2];
-        if (totalString2 == totalString1) {
-            for (int i = 0; i < arrCopy1.length; i++) {
-                totalArray[i] = arrCopy1[i];
-            }
-            int j = 0;
-            for (int i = arrCopy1.length; i < arrCopy1.length + arrCopy2.length; i++) {
-                totalArray[i] = arrCopy2[j];
-                j++;
-            }
-            int k = 0;
-            for (int i = arrCopy1.length + arrCopy2.length; i < totalString2; i++) {
-                totalArray[i] = arrCopy3[k];
-                k++;
-            }
-        }
-        return totalArray;
-
     }
 
 }
