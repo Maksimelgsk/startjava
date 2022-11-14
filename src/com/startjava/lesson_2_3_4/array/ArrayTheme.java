@@ -87,13 +87,13 @@ public class ArrayTheme {
         String[] srcArr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         len = srcArr.length;
         System.out.println("Source array : " + Arrays.toString(srcArr));
-        int noEmptyString = 0;
+        int count = 0;
         for (int i = 0; i < len; i++) {
             if (!srcArr[i].isBlank()) {
-                noEmptyString++;
+                count++;
             }
         }
-        String[] destArr = new String[noEmptyString];
+        String[] destArr = new String[count];
         int n = 0;
         int length = 1;
         for (int i = 0; i < len; i++) {
