@@ -10,11 +10,11 @@ public class ArrayTheme {
         int len = intArr.length;
         outIntArray(intArr);
         System.out.println();
+        len--;
         for (int i = 0; i < len / 2; i++) {
-            int var = intArr[i];
-            len--;
+            int tmp = intArr[i];
             intArr[i] = intArr[len - i];
-            intArr[len - i] = var;
+            intArr[len- i] = tmp;
         }
         outIntArray(intArr);
 
@@ -28,8 +28,7 @@ public class ArrayTheme {
         System.out.println();
         for (int i = 1; i < len - 1; i++) {
             result *= intArr[i];
-            System.out.print(intArr[i]);
-            System.out.printf("%3s", (i < 8) ? " * " : " = ");
+            System.out.printf("%s%s", intArr[i], (i < 8) ? " * " : " = ");
         }
         System.out.println(result);
         System.out.println(intArr[0] + " " + intArr[9]);
@@ -40,29 +39,28 @@ public class ArrayTheme {
         for (int i = 0; i < len; i++) {
             floatArr[i] = (float) Math.random();
         }
-        outFloatArrayMod(floatArr);
-        System.out.println("\n");
-        int sumNull = 0;
+        outFloatArray(floatArr);
+        int zeroCounter = 0;
         float middleNum = floatArr[len / 2];
         for (int i = 0; i < len; i++) {
             if (floatArr[i] > middleNum) {
                 floatArr[i] = 0;
-                sumNull++;
+                zeroCounter++;
             }
         }
-        outFloatArrayMod(floatArr);
-        System.out.println("\n\n  Кол-во обнуленных ячеек: " + sumNull);
+        outFloatArray(floatArr);
+        System.out.println("\n\n  Кол-во обнуленных ячеек: " + zeroCounter);
 
         System.out.println("\n4. Вывод элементов массива лесенкой в обратном порядке");
-        char[] letterArr = new char[26];
-        len = letterArr.length;
+        char[] engAlphabet = new char[26];
+        len = engAlphabet.length;
         int k = 0;
         for (char ch = 'A'; ch <= 'Z'; ch++) {
-            letterArr[k++] = ch;
+            engAlphabet[k++] = ch;
         }
         for (int i = len - 1; i >= 0; i--) {
             for (int j = len - 1; j >= i; j--) {
-                System.out.print(letterArr[j] + " ");
+                System.out.print(engAlphabet[j] + " ");
             }
             System.out.println();
         }
@@ -122,7 +120,7 @@ public class ArrayTheme {
         }
     }
 
-    public static void outFloatArrayMod(float[] floatArr) {
+    public static void outFloatArray(float[] floatArr) {
         for (int i = 0; i < floatArr.length; i++) {
             if (i % 8 == 0) System.out.println();
             System.out.printf("%7.3f", floatArr[i]);

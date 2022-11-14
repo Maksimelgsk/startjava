@@ -16,7 +16,7 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public void calculate() {
+    public int calculate() {
         switch (sign) {
             case '+':
                 result = num1 + num2;
@@ -29,17 +29,14 @@ public class Calculator {
                 break;
             case '/':
                 if (num2 != 0) {
-                    result = num1 / num2;
+                    result = Math.floorDiv(num1, num2);
                 } else {
                     System.out.println("ОШИБКА");
-                    return;
+                    return result;
                 }
                 break;
             case '^':
-                result = 1;
-                for (int i = 1; i <= num2; i++) {
-                    result *= num1;
-                }
+                result = (int) Math.pow(num1, num2);
                 break;
             case '%':
                 result = num1 % num2;
@@ -48,5 +45,6 @@ public class Calculator {
                 System.out.println("Вы допустили ошибку при вводе знака");
         }
         System.out.print("Результат: " + result);
+        return result;
     }
 }
