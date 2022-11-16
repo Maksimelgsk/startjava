@@ -10,11 +10,11 @@ public class ArrayTheme {
         int len = intArr.length;
         outIntArray(intArr);
         System.out.println();
-        len--;
-        for (int i = 0; i < len / 2; i++) {
+        for (int i = 0; i < len; i++) {
+            len--;
             int tmp = intArr[i];
-            intArr[i] = intArr[len - i];
-            intArr[len- i] = tmp;
+            intArr[i] = intArr[len];
+            intArr[len] = tmp;
         }
         outIntArray(intArr);
 
@@ -28,10 +28,9 @@ public class ArrayTheme {
         System.out.println();
         for (int i = 1; i < len - 1; i++) {
             result *= intArr[i];
-            System.out.printf("%s%s", intArr[i], (i < 8) ? " * " : " = ");
+            System.out.print(intArr[i] + ((i < 8) ? " * " : " = ") + ((i == 8) ? result : ""));
         }
-        System.out.println(result);
-        System.out.println(intArr[0] + " " + intArr[9]);
+        System.out.println("\n" + intArr[0] + " " + intArr[9]);
 
         System.out.println("\n3. Удаление элементов массива");
         float[] floatArr = new float[15];
@@ -70,9 +69,11 @@ public class ArrayTheme {
         intArr = new int[len];
         for (int i = 0; i < len; i++) {
             int randomNum;
+            boolean unique;
             do {
                 randomNum = (int) (Math.random() * 40 + 60);
-            } while (!isUnique(intArr, randomNum));
+                unique = isUnique(intArr, randomNum);
+            } while (!unique);
             intArr[i] = randomNum;
         }
         Arrays.sort(intArr);
@@ -86,7 +87,6 @@ public class ArrayTheme {
         System.out.println("\n\n6. Сдвиг элементов массива");
         String[] srcArr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
         len = srcArr.length;
-        System.out.println("Source array : " + Arrays.toString(srcArr));
         int count = 0;
         for (int i = 0; i < len; i++) {
             if (!srcArr[i].isBlank()) {
@@ -94,16 +94,23 @@ public class ArrayTheme {
             }
         }
         String[] destArr = new String[count];
-        int n = 0;
-        int length = 1;
+        int destPos = 0;
+        int countStr = 0;
         for (int i = 0; i < len; i++) {
-                if (!srcArr[i].isBlank()) {
-                    System.arraycopy(srcArr, i, destArr, n++, length);
+            if (!srcArr[i].isBlank()) {
+                countStr++;
+            } else {
+                if (countStr > 0) {
+                    System.arraycopy(srcArr, i - countStr, destArr, destPos, countStr);
+                    destPos += countStr;
                 }
+                countStr = 0;
+            }
         }
-        System.out.println("Destination arrays : " + Arrays.toString(destArr));
-
+        System.out.println("Исходный массив : " + Arrays.toString(srcArr));
+        System.out.println("Модифицированный массив : " + Arrays.toString(destArr));
     }
+
 
     private static boolean isUnique(int[] intArr, int num) {
         for (int element : intArr) {
