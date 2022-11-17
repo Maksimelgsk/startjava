@@ -28,7 +28,7 @@ public class ArrayTheme {
         System.out.println();
         for (int i = 1; i < len - 1; i++) {
             result *= intArr[i];
-            System.out.print(intArr[i] + ((i < 8) ? " * " : " = ") + ((i == 8) ? result : ""));
+            System.out.print(intArr[i] + ((i < (len - 2)) ? " * " : " = " + result));
         }
         System.out.println("\n" + intArr[0] + " " + intArr[9]);
 
@@ -111,7 +111,6 @@ public class ArrayTheme {
         System.out.println("Модифицированный массив : " + Arrays.toString(destArr));
     }
 
-
     private static boolean isUnique(int[] intArr, int num) {
         for (int element : intArr) {
             if (num == element) {
@@ -133,5 +132,4 @@ public class ArrayTheme {
             System.out.printf("%7.3f", floatArr[i]);
         }
     }
-
 }
