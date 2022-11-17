@@ -11,10 +11,8 @@ public class CalculatorTest {
             System.out.print("Введите математическое выражение: ");
             String str = scan.nextLine();
             String[] words = str.split(" ");
-                calc.setNum1(Integer.parseInt(words[0]));
-                calc.setNum2(Integer.parseInt(words[2]));
-                calc.setSign(words[1].charAt(0));
-                calc.calculate();
+            int result = calc.calculate(Integer.parseInt(words[0]), Integer.parseInt(words[2]), words[1].charAt(0));
+            System.out.print("Результат: " + result);
             do {
                 System.out.println("\nХотите продолжить вычисления? [yes/no]:");
                 reply = scan.nextLine();
