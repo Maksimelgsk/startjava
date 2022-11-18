@@ -1,12 +1,7 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-import java.util.Scanner;
-
 public class Calculator {
-
-    public int calculate() {
-        Scanner scan = new Scanner(System.in);
-        String mathExpression = scan.nextLine();
+    public int calculate(String mathExpression) {
         String[] partsExpression = mathExpression.split(" ");
         int num1 = Integer.parseInt(partsExpression[0]);
         int num2 = Integer.parseInt(partsExpression[2]);
