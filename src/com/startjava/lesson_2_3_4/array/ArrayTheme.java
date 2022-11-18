@@ -28,7 +28,7 @@ public class ArrayTheme {
         System.out.println();
         for (int i = 1; i < len - 1; i++) {
             result *= intArr[i];
-            System.out.print(intArr[i] + ((i < (len - 2)) ? " * " : " = " + result));
+            System.out.print(intArr[i] + ((i < len - 2) ? " * " : " = " + result));
         }
         System.out.println("\n" + intArr[0] + " " + intArr[9]);
 

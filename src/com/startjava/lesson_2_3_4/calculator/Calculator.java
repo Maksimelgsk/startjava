@@ -1,7 +1,16 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import java.util.Scanner;
+
 public class Calculator {
-    public int calculate(int num1, int num2, char sign) {
+
+    public int calculate() {
+        Scanner scan = new Scanner(System.in);
+        String mathExpression = scan.nextLine();
+        String[] partsExpression = mathExpression.split(" ");
+        int num1 = Integer.parseInt(partsExpression[0]);
+        int num2 = Integer.parseInt(partsExpression[2]);
+        char sign = partsExpression[1].charAt(0);
         switch (sign) {
             case '+': return num1 + num2;
             case '-': return num1 - num2;
@@ -11,7 +20,6 @@ public class Calculator {
                     return Math.floorDiv(num1, num2);
                 } else {
                     System.out.println("ОШИБКА!");
-                    return 0;
                 }
             case '^': return (int) Math.pow(num1, num2);
             case '%': return num1 % num2;
