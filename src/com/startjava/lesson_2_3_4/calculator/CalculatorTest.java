@@ -8,11 +8,20 @@ public class CalculatorTest {
         String reply = "yes";
         while ("yes".equals(reply)) {
             System.out.print("Введите математическое выражение: ");
-            System.out.print("Результат: " + Calculator.calculate(scan.nextLine()));
+            try {
+                System.out.print("Результат: " + Calculator.calculate(scan.nextLine()));
+            } catch (NumberFormatException e) {
+                System.err.println("Ошибка! Некорректный ввод значений!");
+            } catch (ArithmeticException e) {
+                System.err.println("Ошибка! Деление на ноль!");
+            } catch (IllegalStateException e) {
+                System.err.println("Ошибка! Некорректный ввод знака математической операции!");
+            }
             do {
                 System.out.println("\nХотите продолжить вычисления? [yes/no]:");
                 reply = scan.nextLine();
             } while (!"no".equals(reply) && !"yes".equals(reply));
+
         }
     }
 }
