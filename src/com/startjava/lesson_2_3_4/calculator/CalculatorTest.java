@@ -13,11 +13,7 @@ public class CalculatorTest {
                 System.out.print("Результат: " + Calculator.calculate(scan.nextLine()));
             } catch (NumberFormatException e) {
                 System.err.println("Ошибка! Некорректный ввод значений! Введите целые и положительные числа!");
-            } catch (ArithmeticException e) {
-                System.err.println("Ошибка! Деление на ноль!");
-            } catch (IllegalStateException e) {
-                System.err.println("Ошибка! Некорректный ввод знака математической операции!");
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalStateException | IllegalArgumentException | ArithmeticException e) {
                 System.err.println(e.getMessage());
             }
             do {

@@ -9,6 +9,9 @@ public class Calculator {
         if (num1 < 0 || num2 < 0) {
             throw new IllegalArgumentException("Ошибка! Введите целые и положительные числа!");
         }
+        if (num2 == 0) {
+            throw new ArithmeticException ("Ошибка! Деление на ноль!");
+        }
         double result = switch (sign) {
             case '+' -> num1 + num2;
             case '-' -> num1 - num2;
@@ -16,7 +19,7 @@ public class Calculator {
             case '/' -> Math.floorDiv(num1, num2);
             case '^' -> (int) Math.pow(num1, num2);
             case '%' -> num1 % num2;
-            default -> throw new IllegalStateException();
+            default -> throw new IllegalStateException("Ошибка! Некорректный ввод знака математической операции!");
         };
         return (int) result;
     }
