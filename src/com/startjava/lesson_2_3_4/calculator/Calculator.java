@@ -12,7 +12,7 @@ public class Calculator {
         if (num2 == 0) {
             throw new ArithmeticException ("Ошибка! Деление на ноль!");
         }
-        double result = switch (sign) {
+        return switch (sign) {
             case '+' -> num1 + num2;
             case '-' -> num1 - num2;
             case '*' -> num1 * num2;
@@ -21,6 +21,5 @@ public class Calculator {
             case '%' -> num1 % num2;
             default -> throw new IllegalStateException("Ошибка! Некорректный ввод знака математической операции!");
         };
-        return (int) result;
     }
 }
