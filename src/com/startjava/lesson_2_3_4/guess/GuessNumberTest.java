@@ -7,10 +7,10 @@ public class GuessNumberTest {
         Scanner scan = new Scanner(System.in);
         System.out.println("У каждого игрока по 10 попыток");
         System.out.print("Введите имя первого игрока: ");
-        Player playerFirst = new Player(scan.next());
+        Player player1 = new Player(scan.next());
         System.out.print("Введите имя второго игрока: ");
-        Player playerSecond = new Player(scan.next());
-        GuessNumber game = new GuessNumber(playerFirst, playerSecond);
+        Player player2 = new Player(scan.next());
+        GuessNumber game = new GuessNumber(player1, player2);
         String reply = "yes";
         do {
             if("yes".equals(reply)) {
