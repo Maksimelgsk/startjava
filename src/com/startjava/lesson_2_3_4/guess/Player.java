@@ -3,29 +3,40 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
-    private final String NAME;
-    private final int[] NUMBERS = new int[10];
+    private final String name;
+    private final int[] numbers = new int[10];
 
     public Player(String name) {
-        this.NAME = name;
+        this.name = name;
     }
 
     public String getName() {
-        return NAME;
+        return name;
     }
 
     public int[] getNumbers() {
         int count = 0;
-        for (int i : NUMBERS) {
+        for (int i : numbers) {
             if (i != 0) {
                 count++;
             }
         }
-        return Arrays.copyOf(NUMBERS, count);
+        return Arrays.copyOf(numbers, count);
     }
 
-    public int fillNumbers(int num, int i) {
-        NUMBERS[i] = num;
-        return num;
+    public void fillArray (int[] numbers) {
+        int count = 0;
+        for (int i : numbers) {
+            if (i != 0) {
+                count++;
+            }
+        }
+        Arrays.fill(numbers, 0, count, 0);
+        System.out.println(Arrays.toString(numbers));
     }
+
+    public int addNumber(int number, int i) {
+        return (numbers[i] = number);
+    }
+
 }
