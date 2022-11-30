@@ -14,28 +14,19 @@ public class Player {
         return name;
     }
 
-    public int[] getNumbers(int length) {
-        int count = 0;
-        for (int i = 0; i <= length + 1; i++) {
-            if (numbers[i] != 0) {
-                count++;
-            }
-        }
-        return Arrays.copyOf(numbers, count);
-    }
-
     public int addNumber(int number, int i) {
         return (numbers[i] = number);
     }
 
-    public void fillArray() {
-        int count = 0;
-        for (int number : numbers) {
-            if (number != 0) {
-                count++;
-            }
+    public int[] getNumbers(int length) {
+        if (numbers[length] == 0) {
+            length = length - 1;
         }
-        Arrays.fill(numbers, 0, count, 0);
+        return Arrays.copyOf(numbers, length + 1);
+    }
+
+    public void clearAttempts(int length) {
+        Arrays.fill(numbers, 0, length + 1, 0);
     }
 
 }
