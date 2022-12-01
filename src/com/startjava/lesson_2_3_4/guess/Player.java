@@ -19,14 +19,11 @@ public class Player {
     }
 
     public int[] getNumbers(int length) {
-        if (numbers[length] == 0) {
-            length = length - 1;
-        }
-        return Arrays.copyOf(numbers, length + 1);
+        return Arrays.copyOf(numbers, length);
     }
 
     public void clearAttempts(int length) {
-        Arrays.fill(numbers, 0, length + 1, 0);
+        Arrays.fill(numbers, 0, length, 0);
     }
 
 }
