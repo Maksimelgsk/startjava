@@ -18,7 +18,7 @@ public class Player {
         if (number <= 0 || number > 100) {
             System.out.print("Вы ввели неверное число!!! " + name + " введите число от 0 до 100: ");
         }
-        this.numbers[i] = number;
+        numbers[i] = number;
     }
 
     public int addNumber(int number, int i) {
