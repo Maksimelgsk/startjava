@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class Player {
     private final String name;
     private final int[] numbers = new int[10];
+    private int wins;
+    private int attempts;
 
     public Player(String name) {
         this.name = name;
@@ -14,23 +16,31 @@ public class Player {
         return name;
     }
 
-    public void setNumber(int number, int i) {
+    public int getWins () {
+        return wins;
+    }
+
+    public void addWin() {
+        wins++;
+    }
+
+    public boolean addNumber(int number, int attempt) {
         if (number <= 0 || number > 100) {
             System.out.print("Вы ввели неверное число!!! " + name + " введите число от 0 до 100: ");
+            return false;
         }
-        numbers[i] = number;
+        attempts = attempt;
+        numbers[attempt - 1] = number;
+        return true;
     }
 
-    public int addNumber(int number, int i) {
-        return (numbers[i] = number);
+    public int[] getNumbers() {
+        return Arrays.copyOf(numbers, attempts);
     }
 
-    public int[] getNumbers(int length) {
-        return Arrays.copyOf(numbers, length);
-    }
-
-    public void clearAttempts(int length) {
-        Arrays.fill(numbers, 0, length, 0);
+    public void clearAttempts() {
+        Arrays.fill(numbers, 0, attempts, 0);
+        attempts = 0;
     }
 
 }

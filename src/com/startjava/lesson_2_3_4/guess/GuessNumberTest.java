@@ -12,8 +12,7 @@ public class GuessNumberTest {
         Player player2 = new Player(scan.next());
         System.out.print("Введите имя третьего игрока: ");
         Player player3 = new Player(scan.next());
-        Player[] players = {player1, player2, player3};
-        GuessNumber game = new GuessNumber(players[0], players[1], players[2]);
+        GuessNumber game = new GuessNumber(player1, player2, player3);
         String reply = "yes";
         do {
             if ("yes".equals(reply)) {
