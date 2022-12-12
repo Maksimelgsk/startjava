@@ -16,11 +16,11 @@ public class Player {
         return name;
     }
 
-    public int getWins () {
+    public int getWins() {
         return wins;
     }
 
-    public void addWin() {
+    public void incWin() {
         wins++;
     }
 
